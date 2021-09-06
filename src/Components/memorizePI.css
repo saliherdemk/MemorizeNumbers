@@ -1,23 +1,12 @@
 :root{
     --animation-speed: 1s;
 }
-
+/*
 h1{
     position: relative;
     font-family: "Source Code Pro", monospace;
     color: white;
     width: max-content;
-    top: 50%;
-    
-}
-
-.inpPI{
-    position: absolute;
-    background: transparent;
-    width: max-content;
-    height: 50px;
-    top: 50%;
-    z-index: 99;
     
 }
 
@@ -44,9 +33,53 @@ h1::after{
     animation: 
     typewriter var(--animation-speed) steps(24)  ,
     blink 1s steps(24) forwards ;
-    
-
 }
+
+*/
+.forsvg{
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+
+
+.inpPI{
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    resize: horizontal;
+    height: 300px;
+    z-index: 99;
+    color: orange;
+    border: none;
+    font-size: xx-large;
+    letter-spacing: 7px;
+    caret-color: orange;
+}
+
+.inpPI:active{
+    width: auto;
+}
+
+.inpPI:focus{
+    outline: none;
+    min-width: 200px;
+}
+
+.lovelypi{
+    display: flex;
+}
+
+.three{
+    position: relative;
+    color: orange;
+    left: -35px;
+    text-align: center;
+}
+
 
 @keyframes typewriter{
     to{ left: 100%;}
