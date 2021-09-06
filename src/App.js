@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Components/Home'
+import {BrowserRouter, Route} from 'react-router-dom'
+import MemorizePI from './Components/MemorizePI';
+import ChallangePI from './Components/ChallangePI';
+import MemorizeGOLD from './Components/MemorizeGOLD';
+import ChallangeGOLD from './Components/ChallangeGOLD';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Route exact path="/" component={Home}/>
+        <Route path="/memorizePI" component={MemorizePI}/>
+        <Route path="/challangePI" component={ChallangePI} />
+        <Route path="/memorizeGOLD" component={MemorizeGOLD}/>
+        <Route path="/challangeGOLD" component={ChallangeGOLD}/>
+      </BrowserRouter>
+      
     </div>
   );
 }
+
+
 
 export default App;
