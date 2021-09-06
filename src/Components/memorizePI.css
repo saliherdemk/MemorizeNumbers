@@ -1,0 +1,68 @@
+:root{
+    --animation-speed: 1s;
+}
+
+h1{
+    position: relative;
+    font-family: "Source Code Pro", monospace;
+    color: white;
+    width: max-content;
+    top: 50%;
+    
+}
+
+.inpPI{
+    position: absolute;
+    background: transparent;
+    width: max-content;
+    height: 50px;
+    top: 50%;
+    z-index: 99;
+    
+}
+
+h1::before,
+h1::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    
+}
+
+h1::before{
+    background:#323437;
+    animation: typewriter var(--animation-speed) steps(24)  ;
+    
+}
+
+h1::after{
+    width: .125em;
+    background: white;
+    animation: 
+    typewriter var(--animation-speed) steps(24)  ,
+    blink 1s steps(24) forwards ;
+    
+
+}
+
+@keyframes typewriter{
+    to{ left: 100%;}
+   
+    
+    
+}
+
+@keyframes blink{
+    to{
+        background: transparent;
+
+    }
+    100%{
+        display: none;
+    }
+    
+    
+}
