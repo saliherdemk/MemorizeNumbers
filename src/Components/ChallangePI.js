@@ -10,11 +10,11 @@ const PI6 = 2089986280348
 const PI7 = 25342117067982
 const PI8 = 14808651328230
 const PI9 = 66470938446095
-const PI10= 50582231725359
-const PI11=408128481117450
-const PI12=284102701938521
-const PI13=105559644622948
-const PI14=954930381964
+const PI10 = 50582231725359
+const PI11 = 408128481117450
+const PI12 = 284102701938521
+const PI13 = 105559644622948
+const PI14 = 954930381964
 
 const arr1 = PI1.toString().split("")
 const arr2 = PI2.toString().split("")
@@ -38,13 +38,12 @@ class ChallangePI extends Component {
         aim: "1",
         score: 0,
         current: null,
-        absarr: null
     };
 
     componentDidMount() {
         document.querySelector('textarea').focus();
-        document.addEventListener('keypress',(e)=>{
-            if(e.code === "Space"){
+        document.addEventListener('keypress', (e) => {
+            if (e.code === "Space") {
                 window.location.reload(true)
             }
         })
@@ -69,25 +68,24 @@ class ChallangePI extends Component {
                     newspan.style.color = "#ffea00"
                     this.setState({
                         score: this.state.score + 1
-                    },()=>{
+                    }, () => {
                         document.querySelector('.score').innerHTML = "Score: " + this.state.score
-                        if(localStorage.getItem("MaxScorePI")){
-                            if(localStorage.getItem("MaxScorePI") < this.state.score){
-                                localStorage.setItem("MaxScorePI",this.state.score)
+                        if (localStorage.getItem("MaxScorePI")) {
+                            if (localStorage.getItem("MaxScorePI") < this.state.score) {
+                                localStorage.setItem("MaxScorePI", this.state.score)
                             }
-                        } else{
-                            localStorage.setItem("MaxScorePI",this.state.score)
+                        } else {
+                            localStorage.setItem("MaxScorePI", this.state.score)
                         }
                     })
                 } else {
                     var popup = document.createElement('span')
                     popup.innerHTML = this.state.aim
-                    popup.style.position="absolute"
-                    popup.style.color = "white"
-                    popup.style.display="block"
-                    popup.style.color="#ffea00"
-                    popup.style.fontSize="xx-large"
-                    
+                    popup.style.position = "absolute"
+                    popup.style.display = "block"
+                    popup.style.color = "#ffea00"
+                    popup.style.fontSize = "xx-large"
+
                     newspan.appendChild(popup)
                     newspan.style.color = "red"
                     document.querySelector("textarea").disabled = "true"
@@ -126,7 +124,7 @@ class ChallangePI extends Component {
 
                 <div className="lovelypi">
                     <h1 className="three">3.</h1><div className="displaySpans" ></div>
-                    <textarea  onChange={this.handleChange} className="inpPI" type="text" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpPI" type="text" name="name"></textarea>
                 </div>
 
             </>
