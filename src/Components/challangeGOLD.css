@@ -41,45 +41,72 @@ h1::after{
     top: 10%;
     display: flex;
     justify-content: center;
-    margin-bottom: 200px;
+    margin-bottom: 80px;
 }
 
-
-
-.inpPI{
+.inpGOLD,.displaySpans{
     position: absolute;
     background: transparent;
     width: 100%;
     resize: horizontal;
     height: 300px;
-    z-index: 99;
-    color: orange;
+    color: transparent;
     border: none;
     font-size: xx-large;
     letter-spacing: 7px;
-    caret-color: orange;
+    caret-color: #ffea00;
+    resize: none;
 }
 
-.inpPI:active{
+.inpGOLD:active{
     width: auto;
 }
 
-.inpPI:focus{
+.inpGOLD:focus{
     outline: none;
     min-width: 200px;
 }
 
-.lovelypi{
+.lovelyGOLD{
     display: flex;
 }
 
 .three{
     position: relative;
-    color: orange;
+    color: #ffea00;
     left: -35px;
     text-align: center;
 }
 
+.displaySpans{
+    font-size: xx-large;
+    width: 100%;
+    display: block;
+}
+
+span{
+    float: left;
+}
+
+.score,.max-score{
+    position: relative;
+    margin-bottom: 10px;
+    color: #ffea00;
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    letter-spacing: 3px;
+    
+}
+
+.again{
+    position: relative;
+    color: #ffea00;
+    width: 100%;
+    text-align: center;
+    color: white;
+    visibility: hidden;
+}
 
 @keyframes typewriter{
     to{ left: 100%;}
@@ -96,6 +123,5 @@ h1::after{
     100%{
         display: none;
     }
-    
-    
+
 }

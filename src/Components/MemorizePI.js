@@ -1,5 +1,5 @@
-import React, { Component, componentDidMount } from "react";
-import './memorizePI.css'
+import React, { Component, } from "react";
+import './challangePI.css'
 //#d1d0c5
 
 const PI1 = 4159265358979323
@@ -20,32 +20,86 @@ const arr7 = PI7.toString().split("")
 
 const absarr = [].concat(arr1, arr2, arr3, arr4, arr5, arr6, arr7)
 
+
+
 class MemorizePI extends Component {
     state = {
         aim: "1",
         score: 0,
-        current: null
-    }
+        current: null,
+        absarr: null
+    };
 
     componentDidMount() {
         document.querySelector('textarea').focus();
+        document.addEventListener('keypress',(e)=>{
+            if(e.code == "Space"){
+                window.location.reload(true)
+            }
+        })
     }
 
+
+    reset = () =>{
+        console.log("asd")
+        var txtarea= document.querySelector('.inpPI')
+        
+        this.reloadState()
+        
+        
+        txtarea.value = ''
+        document.querySelector('.yeni').innerHTML = ''
+        document.querySelector('.again').style.visibility = "hidden"
+        txtarea.removeAttribute("disabled")
+
+    }
+    
+
     handleChange = (e) => {
+
+        var str = e.target.value.toString().slice(-1);
+        var all = str.split("")
+
         this.setState({
 
             current: (e.target.value).toString().slice(-1)
         }, () => {
             console.log(absarr)
 
-            if ((this.state.aim) == (this.state.current)) {
-                console.log(this.state.aim)
-                console.log("now", this.state.current)
-            } else {
-                alert("asd")
-                console.log("aim", this.state.aim)
-                console.log("now", this.state.current)
-            }
+            all.forEach(element => {
+                var yeni = document.querySelector('.yeni')
+                var newspan = document.createElement('span')
+                newspan.innerHTML = element
+                if ((this.state.aim) == (this.state.current)) {
+                    newspan.style.color = "#ffea00"
+                    this.setState({
+                        score: this.state.score + 1
+                    },()=>{
+                        document.querySelector('.score').innerHTML = "Score: " + this.state.score
+                        if(localStorage.getItem("MaxScore")){
+                            if(localStorage.getItem("MaxScore") < this.state.score){
+                                localStorage.setItem("MaxScore",this.state.score)
+                            }
+                        } else{
+                            localStorage.setItem("MaxScore",this.state.score)
+                        }
+                    })
+                } else {
+                    var popup = document.createElement('span')
+                    popup.innerHTML = this.state.aim
+                    popup.style.position="absolute"
+                    popup.style.color = "white"
+                    popup.style.display="block"
+                    popup.style.color="#ffea00"
+                    popup.style.fontSize="xx-large"
+                    
+                    newspan.appendChild(popup)
+                    newspan.style.color = "red"
+                    document.querySelector("textarea").disabled = "true"
+                    document.querySelector('.again').style.visibility = "visible"
+                }
+                yeni.appendChild(newspan)
+            });
 
             this.setState({
                 aim: ((this.state.aim + absarr.shift().toString()))
@@ -72,13 +126,17 @@ class MemorizePI extends Component {
                         <path d="M196.936 186.034C196.936 187.982 196.962 188.773 197.014 187.785C197.066 186.825 197.066 185.243 197.014 184.255C196.962 183.295 196.936 184.085 196.936 186.034Z" fill="#C0C0C0" />
                         <path d="M196.624 195.212C196.624 195.664 196.676 195.833 196.754 195.551C196.806 195.297 196.806 194.901 196.754 194.703C196.676 194.534 196.624 194.732 196.624 195.212Z" fill="#C0C0C0" />
                     </svg>
-
                 </div>
-
+                <div className="max-score">{localStorage.getItem("MaxScore")}</div>
+                <div className="score">Score: </div>
+                <div className="again">Press <kbd>Space</kbd> for play again!</div>
 
                 <div className="lovelypi">
-                    <h1 className="three">3.</h1><textarea onChange={this.handleChange} className="inpPI" type="text" name="name"></textarea>
+                    <h1 className="three">3.</h1><div className="yeni" ></div>
+                    <textarea  onChange={this.handleChange} className="inpPI" type="text" name="name"></textarea>
                 </div>
+
+
 
 
             </>
