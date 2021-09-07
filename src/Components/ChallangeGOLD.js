@@ -43,7 +43,7 @@ class ChallangeGOLD extends Component {
     componentDidMount() {
         document.querySelector('textarea').focus();
         document.addEventListener('keypress',(e)=>{
-            if(e.code == "Space"){
+            if(e.code === "Space"){
                 window.location.reload(true)
             }
         })
@@ -64,7 +64,7 @@ class ChallangeGOLD extends Component {
                 var displaySpans = document.querySelector('.displaySpans')
                 var newspan = document.createElement('span')
                 newspan.innerHTML = element
-                if ((this.state.aim) == (this.state.current)) {
+                if ((this.state.aim) === (this.state.current)) {
                     newspan.style.color = "#ffea00"
                     this.setState({
                         score: this.state.score + 1
