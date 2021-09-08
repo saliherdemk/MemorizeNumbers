@@ -69,12 +69,12 @@ class ChallangeGOLD extends Component {
                         score: this.state.score + 1
                     }, () => {
                         document.querySelector('.score').innerHTML = "Score: " + this.state.score
-                        if (localStorage.getItem("MaxScoreGOLD")) {
-                            if (localStorage.getItem("MaxScoreGOLD") < this.state.score) {
-                                localStorage.setItem("MaxScoreGOLD", this.state.score)
+                        if (localStorage.getItem("MaxChallangeGOLDScore")) {
+                            if (localStorage.getItem("MaxChallangeGOLDScore") < this.state.score) {
+                                localStorage.setItem("MaxChallangeGOLDScore", this.state.score)
                             }
                         } else {
-                            localStorage.setItem("MaxScoreGOLD", this.state.score)
+                            localStorage.setItem("MaxChallangeGOLDScore", this.state.score)
                         }
                     })
                 } else {
@@ -110,6 +110,7 @@ class ChallangeGOLD extends Component {
     render() {
         return (
             <>
+                <div className="info">&nbsp;&nbsp;Golden Ratio Challenge</div>
                 <div className="forsvg">
                     <svg width="400" height="348" viewBox="0 0 200 148" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.13074 143.7C4.13074 106.901 16.6571 71.6097 38.9541 45.5889C61.2512 19.5682 91.4925 4.94987 123.025 4.94987" stroke="#C0C0C0" strokeWidth="2.66667" />
@@ -142,7 +143,7 @@ class ChallangeGOLD extends Component {
                     </svg>
 
                 </div>
-                <div className="max-score">{localStorage.getItem("MaxScoreGOLD")}</div>
+                <div className="max-score">{localStorage.getItem("MaxChallangeGOLDScore")}</div>
                 <div className="score">Score: </div>
                 <div className="again">Press <kbd>Space</kbd> for play again!</div>
 
