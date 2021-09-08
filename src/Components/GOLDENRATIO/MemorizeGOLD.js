@@ -1,7 +1,6 @@
 import React, { Component, } from "react";
-import './challangeGOLD.css'
 
-const GOLD1 = 1803398874989484
+const GOLD1 = 61803398874989484
 const GOLD2 = 8204586834365638
 const GOLD3 = 1177203091798057
 const GOLD4 = 6286213544862270
@@ -32,21 +31,27 @@ const arr13 = GOLD13.toString().split("")
 
 const absarr = [].concat(arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr10, arr11, arr12, arr13)
 
-class ChallangeGOLD extends Component {
+class MemorizeGOLD extends Component {
     state = {
-        aim: "6",
-        score: 0,
+        aim: ["6"],
+        score: 2,
         current: null,
     };
 
     componentDidMount() {
-        document.querySelector('textarea').focus();
         document.addEventListener('keypress', (e) => {
             if (e.code === "Space") {
                 window.location.reload(true)
             }
         })
+        //If user change page before waiting 1s, app doesn't find innerhtml
+        setTimeout(() => {
+            document.querySelector('.displaySpans').innerHTML = ''
+            document.querySelector("textarea").focus()
+        }, 1000);
+
     }
+
 
     handleChange = (e) => {
 
@@ -57,29 +62,66 @@ class ChallangeGOLD extends Component {
 
             current: (e.target.value).toString().slice(-1)
         }, () => {
-            console.log(absarr)
 
             all.forEach(element => {
                 var displaySpans = document.querySelector('.displaySpans')
                 var newspan = document.createElement('span')
                 newspan.innerHTML = element
-                if ((this.state.aim) === (this.state.current)) {
+                var answer = this.state.aim.shift()
+
+                if (answer === (this.state.current)) {
                     newspan.style.color = "#ffea00"
-                    this.setState({
-                        score: this.state.score + 1
-                    }, () => {
-                        document.querySelector('.score').innerHTML = "Score: " + this.state.score
-                        if (localStorage.getItem("MaxChallangeGOLDScore")) {
-                            if (localStorage.getItem("MaxChallangeGOLDScore") < this.state.score) {
-                                localStorage.setItem("MaxChallangeGOLDScore", this.state.score)
+                    if (this.state.aim.length === 0) {
+                        var absscore = parseInt(this.state.score) - 1
+                        document.querySelector('.score').innerHTML = "Score: " + absscore
+                        if (localStorage.getItem("MaxMemorizeGOLDScore")) {
+                            if (localStorage.getItem("MaxMemorizeGOLDScore") < absscore) {
+                                localStorage.setItem("MaxMemorizeGOLDScore", absscore)
                             }
                         } else {
-                            localStorage.setItem("MaxChallangeGOLDScore", this.state.score)
+                            localStorage.setItem("MaxMemorizeGOLDScore", absscore)
                         }
-                    })
+                        setTimeout(() => {
+                            this.setState({
+                                aim: absarr.slice(0, this.state.score),
+                                score: this.state.score + 1,
+                                current: null
+                            }, () => {
+                                var txt = document.querySelector("textarea")
+                                txt.value = ''
+                                displaySpans.innerHTML = ''
+                                var aim = this.state.aim
+                                var counter = 0
+                                txt.disabled = true
+                                aim.forEach(function (el, index) {
+                                    setTimeout(() => {
+                                        var newsp = document.createElement('span')
+                                        newsp.innerHTML = el
+                                        newsp.style.color = "white"
+                                        displaySpans.appendChild(newsp)
+                                        counter += 1
+                                        if (counter === aim.length) {
+                                            setTimeout(() => {
+                                                displaySpans.innerHTML = ''
+                                                txt.disabled = false
+                                                txt.focus()
+                                            }, 300);
+                                        }
+
+                                    }, (index) * 500);
+                                    console.log(counter)
+
+                                })
+
+                            })
+
+                        }, 100);
+
+                    }
+
                 } else {
                     var popup = document.createElement('span')
-                    popup.innerHTML = this.state.aim
+                    popup.innerHTML = answer
                     popup.style.position = "absolute"
                     popup.style.display = "block"
                     popup.style.color = "#ffea00"
@@ -93,15 +135,7 @@ class ChallangeGOLD extends Component {
                 displaySpans.appendChild(newspan)
             });
 
-            this.setState({
-                aim: ((this.state.aim + absarr.shift().toString()))
-            }, () => {
 
-                this.setState({
-                    aim: (this.state.aim).toString().slice(-1),
-
-                })
-            })
 
         })
 
@@ -110,9 +144,9 @@ class ChallangeGOLD extends Component {
     render() {
         return (
             <>
-                <div className="info">&nbsp;&nbsp;Golden Ratio Challenge</div>
+                <div className="info">&nbsp;&nbsp;Memorize Golden Ratio</div>
                 <div className="forsvg">
-                    <svg width="400" height="348" viewBox="0 0 200 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="400" height="348" viewBox="0 0 200 148" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.13074 143.7C4.13074 106.901 16.6571 71.6097 38.9541 45.5889C61.2512 19.5682 91.4925 4.94987 123.025 4.94987" stroke="#C0C0C0" strokeWidth="2.66667" />
                         <path d="M196.509 90.7052C196.509 67.9614 188.767 46.1492 174.986 30.0669C161.205 13.9847 142.514 4.94975 123.025 4.94975" stroke="#C0C0C0" strokeWidth="2.66667" />
                         <path d="M151.098 143.7C163.142 143.7 174.692 138.117 183.208 128.178C191.724 118.24 196.509 104.76 196.509 90.7053" stroke="#C0C0C0" strokeWidth="2.66667" />
@@ -141,15 +175,14 @@ class ChallangeGOLD extends Component {
                         <path d="M144.492 105.158C144.492 105.285 144.471 105.41 144.43 105.527C144.388 105.644 144.327 105.75 144.251 105.84C144.174 105.929 144.083 106 143.983 106.049C143.883 106.097 143.775 106.122 143.667 106.122" stroke="#C0C0C0" strokeWidth="2.66667" />
                         <path d="M142.843 105.157C142.843 105.283 142.864 105.409 142.906 105.525C142.947 105.642 143.008 105.749 143.084 105.838C143.161 105.928 143.252 105.998 143.352 106.047C143.452 106.095 143.56 106.12 143.668 106.12" stroke="#C0C0C0" strokeWidth="2.66667" />
                     </svg>
-
                 </div>
-                <div className="max-score">{localStorage.getItem("MaxChallangeGOLDScore")}</div>
+                <div className="max-score">{localStorage.getItem("MaxMemorizeGOLDScore")}</div>
                 <div className="score">Score: </div>
                 <div className="again">Press <kbd>Space</kbd> for play again!</div>
 
-                <div className="lovelyGOLD">
-                    <h1 className="three">1.</h1><div className="displaySpans" ></div>
-                    <textarea onChange={this.handleChange} className="inpGOLD" type="text" name="name"></textarea>
+                <div className="lovely">
+                    <h1 className="three">1.</h1><div className="displaySpans" ><span style={{ color: 'white' }} id="firstSpan">6</span></div>
+                    <textarea onChange={this.handleChange} className="inpPI" type="text" name="name"></textarea>
                 </div>
 
             </>
@@ -163,7 +196,7 @@ class ChallangeGOLD extends Component {
 }
 
 //<h1>{this.state.aim}</h1>
-export default ChallangeGOLD
+export default MemorizeGOLD
 
 
 
