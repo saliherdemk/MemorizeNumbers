@@ -45,6 +45,10 @@ class MemorizePI extends Component {
                 window.location.reload(true)
             }
         })
+        document.querySelector(".here").addEventListener('click',()=>{
+            window.location.reload(true)
+        })
+
         //If user change page before waiting 1s, app doesn't find innerhtml
         setTimeout(() => {
             document.querySelector('.displaySpans').innerHTML = ''
@@ -154,7 +158,7 @@ class MemorizePI extends Component {
                 </div>
                 <div className="max-score">{localStorage.getItem("MaxMemorizePIScore")}</div>
                 <div className="score">Score: </div>
-                <div className="again">Press <kbd>Space</kbd> for play again!</div>
+                <div className="again">Press <kbd className="sp">Space</kbd><button className="here"><kbd>Here</kbd></button> for play again!</div>
 
                 <div className="lovely">
                     <h1 className="three">3.</h1><div className="displaySpans" ><span style={{ color: 'white' }} id="firstSpan">1</span></div>

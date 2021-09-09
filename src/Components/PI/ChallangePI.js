@@ -46,6 +46,9 @@ class ChallangePI extends Component {
                 window.location.reload(true)
             }
         })
+        document.querySelector(".here").addEventListener('click',()=>{
+            window.location.reload(true)
+        })
     }
 
     handleChange = (e) => {
@@ -119,7 +122,7 @@ class ChallangePI extends Component {
                 </div>
                 <div className="max-score">{localStorage.getItem("MaxChallangePIScore")}</div>
                 <div className="score">Score: </div>
-                <div className="again">Press <kbd>Space</kbd> for play again!</div>
+                <div className="again">Press <kbd className="sp">Space</kbd><button className="here"><kbd>Here</kbd></button> for play again!</div>
 
                 <div className="lovely">
                     <h1 className="three">3.</h1><div className="displaySpans" ></div>

@@ -68,6 +68,10 @@ h3{
   margin: 10px 10px;
 }
 
+.here{
+  display: none;
+}
+
 @media all and (max-width:800px){
     .decision{
       display: block;
@@ -92,6 +96,21 @@ h3{
       width: 226px;
       height: 248px;
       margin-top: 5px;
+    }
+
+    .sp{
+      display: none;
+    }
+  
+    .here{
+      background-color: transparent;
+      border: none;
+      display:initial;
+      z-index: 99;
+    }
+
+    .here:focus{
+      outline: 0 !important;
     }
     
 }
