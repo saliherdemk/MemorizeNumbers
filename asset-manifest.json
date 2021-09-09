@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/MemorizeNumbers/static/css/main.a846046b.chunk.css",
-    "main.js": "/MemorizeNumbers/static/js/main.95b80307.chunk.js",
-    "main.js.map": "/MemorizeNumbers/static/js/main.95b80307.chunk.js.map",
+    "main.js": "/MemorizeNumbers/static/js/main.0ac20426.chunk.js",
+    "main.js.map": "/MemorizeNumbers/static/js/main.0ac20426.chunk.js.map",
     "runtime-main.js": "/MemorizeNumbers/static/js/runtime-main.8f7ab538.js",
     "runtime-main.js.map": "/MemorizeNumbers/static/js/runtime-main.8f7ab538.js.map",
-    "static/js/2.eff544d1.chunk.js": "/MemorizeNumbers/static/js/2.eff544d1.chunk.js",
-    "static/js/2.eff544d1.chunk.js.map": "/MemorizeNumbers/static/js/2.eff544d1.chunk.js.map",
+    "static/js/2.22b57134.chunk.js": "/MemorizeNumbers/static/js/2.22b57134.chunk.js",
+    "static/js/2.22b57134.chunk.js.map": "/MemorizeNumbers/static/js/2.22b57134.chunk.js.map",
     "static/js/3.4f474493.chunk.js": "/MemorizeNumbers/static/js/3.4f474493.chunk.js",
     "static/js/3.4f474493.chunk.js.map": "/MemorizeNumbers/static/js/3.4f474493.chunk.js.map",
     "index.html": "/MemorizeNumbers/index.html",
     "static/css/main.a846046b.chunk.css.map": "/MemorizeNumbers/static/css/main.a846046b.chunk.css.map",
-    "static/js/2.eff544d1.chunk.js.LICENSE.txt": "/MemorizeNumbers/static/js/2.eff544d1.chunk.js.LICENSE.txt"
+    "static/js/2.22b57134.chunk.js.LICENSE.txt": "/MemorizeNumbers/static/js/2.22b57134.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8f7ab538.js",
-    "static/js/2.eff544d1.chunk.js",
+    "static/js/2.22b57134.chunk.js",
     "static/css/main.a846046b.chunk.css",
-    "static/js/main.95b80307.chunk.js"
+    "static/js/main.0ac20426.chunk.js"
   ]
 }
