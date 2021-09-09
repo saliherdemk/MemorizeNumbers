@@ -14,7 +14,6 @@ const GOLD11 = 9086595939582905
 const GOLD12 = 6383226613199282
 const GOLD13 = 90267880
 
-
 const arr1 = GOLD1.toString().split("")
 const arr2 = GOLD2.toString().split("")
 const arr3 = GOLD3.toString().split("")
@@ -56,7 +55,6 @@ class ChallangeGOLD extends Component {
 
             current: (e.target.value).toString().slice(-1)
         }, () => {
-            console.log(absarr)
 
             all.forEach(element => {
                 var displaySpans = document.querySelector('.displaySpans')
@@ -111,7 +109,7 @@ class ChallangeGOLD extends Component {
             <>
                 <div className="info">&nbsp;&nbsp;Golden Ratio Challenge</div>
                 <div className="forsvg">
-                    <svg width="400" height="348" viewBox="0 0 200 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="400" height="348" viewBox="0 0 200 148" fill="none" className="respsvg">
                         <path d="M4.13074 143.7C4.13074 106.901 16.6571 71.6097 38.9541 45.5889C61.2512 19.5682 91.4925 4.94987 123.025 4.94987" stroke="#C0C0C0" strokeWidth="2.66667" />
                         <path d="M196.509 90.7052C196.509 67.9614 188.767 46.1492 174.986 30.0669C161.205 13.9847 142.514 4.94975 123.025 4.94975" stroke="#C0C0C0" strokeWidth="2.66667" />
                         <path d="M151.098 143.7C163.142 143.7 174.692 138.117 183.208 128.178C191.724 118.24 196.509 104.76 196.509 90.7053" stroke="#C0C0C0" strokeWidth="2.66667" />
@@ -157,11 +155,8 @@ class ChallangeGOLD extends Component {
 
     }
 
-
-
 }
 
-//<h1>{this.state.aim}</h1>
 export default ChallangeGOLD
 
 

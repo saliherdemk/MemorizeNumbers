@@ -9,7 +9,6 @@ body{
   left: 10%;
 }
 
-
 .all{
   position: absolute;
   height: 100%;
@@ -51,7 +50,65 @@ h3{
   
 }
 
+.info{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 6%;
+  justify-content: center;
+  align-items:flex-end;
+  color: white;
+  font-size: 35px;
+  letter-spacing: 2px;
+  bottom: -60px;
+  font-style: italic;
+}
+
 .memorizePI, .memorizegold, .memorizeEuler{
   margin: 10px 10px;
 }
 
+@media all and (max-width:800px){
+    .decision{
+      display: block;
+      margin-top: 50px;
+    }
+    img{
+      display: none;
+    }
+
+    .pi,.euler{
+      margin-bottom: 30px;
+    }
+
+    .roof{
+      font-size: 6vw;
+    }
+    .info{
+      font-size: 20px;
+    }
+
+    .respsvg{
+      width: 226px;
+      height: 248px;
+      margin-top: 5px;
+    }
+    
+}
+
+@media all and (max-width: 600px){
+  .home{
+    height: 45px;
+  }
+
+}
+
+@media all and (max-width: 450px){
+  .home{
+    height: 40px;
+  }
+
+  .info{
+    margin-top: 20px;
+  }
+}
