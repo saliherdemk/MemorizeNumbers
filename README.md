@@ -1,5 +1,5 @@
 # Memorize Special Numbers
-Special number memorize training website which i made for learn react.
+Special number memorize website which i made for learn react.
 https://saliherdemk.github.io/MemorizeNumbers/#/
 
 # Getting Started with Create React App
