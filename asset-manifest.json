@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MemorizeNumbers/static/css/main.55da8897.chunk.css",
-    "main.js": "/MemorizeNumbers/static/js/main.5815d197.chunk.js",
-    "main.js.map": "/MemorizeNumbers/static/js/main.5815d197.chunk.js.map",
+    "main.js": "/MemorizeNumbers/static/js/main.ab738a00.chunk.js",
+    "main.js.map": "/MemorizeNumbers/static/js/main.ab738a00.chunk.js.map",
     "runtime-main.js": "/MemorizeNumbers/static/js/runtime-main.8f7ab538.js",
     "runtime-main.js.map": "/MemorizeNumbers/static/js/runtime-main.8f7ab538.js.map",
     "static/js/2.22b57134.chunk.js": "/MemorizeNumbers/static/js/2.22b57134.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8f7ab538.js",
     "static/js/2.22b57134.chunk.js",
     "static/css/main.55da8897.chunk.css",
-    "static/js/main.5815d197.chunk.js"
+    "static/js/main.ab738a00.chunk.js"
   ]
 }
