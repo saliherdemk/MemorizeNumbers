@@ -158,7 +158,7 @@ class MemorizeEuler extends Component {
 
                 <div className="lovely">
                     <h1 className="three">2.</h1><div className="displaySpans" ><span style={{ color: 'white' }} id="firstSpan">7</span></div>
-                    <textarea onChange={this.handleChange} className="inpPI" type="number" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpPI" inputMode="numeric" type="text" name="name"></textarea>
                 </div>
 
             </>

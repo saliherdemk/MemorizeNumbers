@@ -123,7 +123,7 @@ class ChallangeEuler extends Component {
 
                 <div className="lovely">
                     <h1 className="three">2.</h1><div className="displaySpans" ></div>
-                    <textarea onChange={this.handleChange} className="inpGOLD" type="number" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpGOLD" inputMode="numeric" type="text" name="name"></textarea>
                 </div>
 
             </>
