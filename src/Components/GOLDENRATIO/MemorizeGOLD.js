@@ -44,7 +44,7 @@ class MemorizeGOLD extends Component {
                 window.location.reload(true)
             }
         })
-        document.querySelector(".here").addEventListener('click',()=>{
+        document.querySelector(".here").addEventListener('click', () => {
             window.location.reload(true)
         })
 
@@ -147,7 +147,7 @@ class MemorizeGOLD extends Component {
             <>
                 <div className="info">&nbsp;&nbsp;Memorize Golden Ratio</div>
                 <div className="forsvg">
-                <svg width="400" height="348" viewBox="0 0 200 148" fill="none" className="respsvg">
+                    <svg width="400" height="348" viewBox="0 0 200 148" fill="none" className="respsvg">
                         <path d="M4.13074 143.7C4.13074 106.901 16.6571 71.6097 38.9541 45.5889C61.2512 19.5682 91.4925 4.94987 123.025 4.94987" stroke="#C0C0C0" strokeWidth="2.66667" />
                         <path d="M196.509 90.7052C196.509 67.9614 188.767 46.1492 174.986 30.0669C161.205 13.9847 142.514 4.94975 123.025 4.94975" stroke="#C0C0C0" strokeWidth="2.66667" />
                         <path d="M151.098 143.7C163.142 143.7 174.692 138.117 183.208 128.178C191.724 118.24 196.509 104.76 196.509 90.7053" stroke="#C0C0C0" strokeWidth="2.66667" />
@@ -183,7 +183,7 @@ class MemorizeGOLD extends Component {
 
                 <div className="lovely">
                     <h1 className="three">1.</h1><div className="displaySpans" ><span style={{ color: 'white' }} id="firstSpan">6</span></div>
-                    <textarea onChange={this.handleChange} className="inpPI" type="text" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpPI" type="number" name="name"></textarea>
                 </div>
 
             </>

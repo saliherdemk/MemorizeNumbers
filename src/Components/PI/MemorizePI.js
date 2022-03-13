@@ -45,7 +45,7 @@ class MemorizePI extends Component {
                 window.location.reload(true)
             }
         })
-        document.querySelector(".here").addEventListener('click',()=>{
+        document.querySelector(".here").addEventListener('click', () => {
             window.location.reload(true)
         })
 
@@ -162,7 +162,7 @@ class MemorizePI extends Component {
 
                 <div className="lovely">
                     <h1 className="three">3.</h1><div className="displaySpans" ><span style={{ color: 'white' }} id="firstSpan">1</span></div>
-                    <textarea onChange={this.handleChange} className="inpPI" type="text" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpPI" type="number" name="name"></textarea>
                 </div>
 
             </>

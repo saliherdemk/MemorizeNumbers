@@ -44,7 +44,7 @@ class ChallangeGOLD extends Component {
                 window.location.reload(true)
             }
         })
-        document.querySelector(".here").addEventListener('click',()=>{
+        document.querySelector(".here").addEventListener('click', () => {
             window.location.reload(true)
         })
     }
@@ -149,7 +149,7 @@ class ChallangeGOLD extends Component {
 
                 <div className="lovely">
                     <h1 className="three">1.</h1><div className="displaySpans" ></div>
-                    <textarea onChange={this.handleChange} className="inpGOLD" type="text" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpGOLD" type="number" name="name"></textarea>
                 </div>
 
             </>
