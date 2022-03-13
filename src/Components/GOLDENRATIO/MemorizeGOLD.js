@@ -183,7 +183,7 @@ class MemorizeGOLD extends Component {
 
                 <div className="lovely">
                     <h1 className="three">1.</h1><div className="displaySpans" ><span style={{ color: 'white' }} id="firstSpan">6</span></div>
-                    <textarea onChange={this.handleChange} className="inpPI" inputMode="numeric" type="text" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpPI" inputmode="numeric" type="text" name="name"></textarea>
                 </div>
 
             </>

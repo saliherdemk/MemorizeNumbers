@@ -126,7 +126,7 @@ class ChallangePI extends Component {
 
                 <div className="lovely">
                     <h1 className="three">3.</h1><div className="displaySpans" ></div>
-                    <textarea onChange={this.handleChange} className="inpPI" inputMode="numeric" type="text" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpPI" inputmode="numeric" type="text" name="name"></textarea>
                 </div>
 
             </>

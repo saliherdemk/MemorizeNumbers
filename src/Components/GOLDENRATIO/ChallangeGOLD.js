@@ -149,7 +149,7 @@ class ChallangeGOLD extends Component {
 
                 <div className="lovely">
                     <h1 className="three">1.</h1><div className="displaySpans" ></div>
-                    <textarea onChange={this.handleChange} className="inpGOLD" inputMode="numeric" type="text" name="name"></textarea>
+                    <textarea onChange={this.handleChange} className="inpGOLD" inputmode="numeric" type="text" name="name"></textarea>
                 </div>
 
             </>
