@@ -1,34 +1,7 @@
 import React, { Component, } from "react";
+import SpecificNumbers from "../../utils/utils";
 
-const EULER1 = 7182818284590452
-const EULER2 = 3536028747135266
-const EULER3 = 2497757247093699
-const EULER4 = 9595749669676277
-const EULER5 = 2407663035354759
-const EULER6 = 4571382178525166
-const EULER7 = 42742746639193
-const EULER8 = 200305992181741
-const EULER9 = 3596629043572900
-const EULER10 = 334295260595630
-const EULER11 = 738132328627943
-const EULER12 = 490763233829880
-const EULER13 = 75319525101901
-
-const arr1 = EULER1.toString().split("")
-const arr2 = EULER2.toString().split("")
-const arr3 = EULER3.toString().split("")
-const arr4 = EULER4.toString().split("")
-const arr5 = EULER5.toString().split("")
-const arr6 = EULER6.toString().split("")
-const arr7 = EULER7.toString().split("")
-const arr8 = EULER8.toString().split("")
-const arr9 = EULER9.toString().split("")
-const arr10 = EULER10.toString().split("")
-const arr11 = EULER11.toString().split("")
-const arr12 = EULER12.toString().split("")
-const arr13 = EULER13.toString().split("")
-
-const absarr = [].concat(arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr10, arr11, arr12, arr13)
+const absarr = SpecificNumbers.euler();
 
 class MemorizeEuler extends Component {
     state = {
