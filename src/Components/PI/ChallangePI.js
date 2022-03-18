@@ -1,36 +1,7 @@
 import React, { Component, } from "react";
+import SpecificNumbers from "../../utils/utils";
 
-const PI1 = 4159265358979323
-const PI2 = 8462643383279502
-const PI3 = 884197169399375
-const PI4 = 105820974944592
-const PI5 = 307816406286
-const PI6 = 2089986280348
-const PI7 = 25342117067982
-const PI8 = 14808651328230
-const PI9 = 66470938446095
-const PI10 = 50582231725359
-const PI11 = 408128481117450
-const PI12 = 284102701938521
-const PI13 = 105559644622948
-const PI14 = 954930381964
-
-const arr1 = PI1.toString().split("")
-const arr2 = PI2.toString().split("")
-const arr3 = PI3.toString().split("")
-const arr4 = PI4.toString().split("")
-const arr5 = PI5.toString().split("")
-const arr6 = PI6.toString().split("")
-const arr7 = PI7.toString().split("")
-const arr8 = PI8.toString().split("")
-const arr9 = PI9.toString().split("")
-const arr10 = PI10.toString().split("")
-const arr11 = PI11.toString().split("")
-const arr12 = PI12.toString().split("")
-const arr13 = PI13.toString().split("")
-const arr14 = PI14.toString().split("")
-
-const absarr = [].concat(arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr10, arr11, arr12, arr13, arr14)
+const absarr = SpecificNumbers.PI();
 
 class ChallangePI extends Component {
     state = {

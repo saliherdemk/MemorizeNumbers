@@ -1,34 +1,7 @@
 import React, { Component, } from "react";
+import SpecificNumbers from "../../utils/utils";
 
-const GOLD1 = 1803398874989484
-const GOLD2 = 8204586834365638
-const GOLD3 = 1177203091798057
-const GOLD4 = 6286213544862270
-const GOLD5 = 5260462818902449
-const GOLD6 = 7072072041893911
-const GOLD7 = 3748475408807538
-const GOLD8 = 6891752126633862
-const GOLD9 = 2235369317931800
-const GOLD10 = 6076672635443338
-const GOLD11 = 9086595939582905
-const GOLD12 = 6383226613199282
-const GOLD13 = 90267880
-
-const arr1 = GOLD1.toString().split("")
-const arr2 = GOLD2.toString().split("")
-const arr3 = GOLD3.toString().split("")
-const arr4 = GOLD4.toString().split("")
-const arr5 = GOLD5.toString().split("")
-const arr6 = GOLD6.toString().split("")
-const arr7 = GOLD7.toString().split("")
-const arr8 = GOLD8.toString().split("")
-const arr9 = GOLD9.toString().split("")
-const arr10 = GOLD10.toString().split("")
-const arr11 = GOLD11.toString().split("")
-const arr12 = GOLD12.toString().split("")
-const arr13 = GOLD13.toString().split("")
-
-const absarr = [].concat(arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr10, arr11, arr12, arr13)
+const absarr = SpecificNumbers.goldenRatio();
 
 class ChallangeGOLD extends Component {
     state = {
